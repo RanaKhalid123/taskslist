@@ -1,0 +1,80 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  id: Float!
+  title: String!
+  status: TaskStatus!
+  order: Float
+  list: [List!]
+}
+
+"""The task status"""
+enum TaskStatus {
+  COMPLETED
+  NEW
+  INPROGRESS
+}
+
+type List {
+  id: Float!
+  title: String!
+  tasks: [Task!]
+}
+
+type ResponsePayload {
+  status: Float
+  error: String
+  message: String
+  name: String
+}
+
+type ListPayload {
+  response: ResponsePayload
+  list: List
+}
+
+type ListsPayload {
+  response: ResponsePayload
+  lists: [List]
+}
+
+type TaskPayload {
+  response: ResponsePayload
+  task: Task
+}
+
+type Query {
+  getAllLists: ListsPayload!
+}
+
+type Mutation {
+  createTask(createTaskInput: CreateTaskInput!): TaskPayload!
+  updateTask(updateTaskInput: UpdateTaskInput!): TaskPayload!
+  updateTaskPostion(updateTaskPositionInput: UpdateTaskPositionInput!): TaskPayload!
+  createList(createListInput: CreateListInput!): ListPayload!
+}
+
+input CreateTaskInput {
+  title: String!
+  listId: Float!
+  order: Float
+}
+
+input UpdateTaskInput {
+  title: String
+  listId: Float
+  order: Float
+  id: Int!
+  status: TaskStatus!
+}
+
+input UpdateTaskPositionInput {
+  id: Int!
+  order: Int!
+}
+
+input CreateListInput {
+  title: String!
+}
