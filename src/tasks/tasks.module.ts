@@ -4,7 +4,7 @@ import { TasksService } from './tasks.service';
 import { TasksResolver } from './tasks.resolver';
 import { Task } from './entities/task.entity';
 import { ConfigService } from '@nestjs/config';
-import { ListsModule } from 'src/lists/lists.module';
+import { ListsModule } from '../lists/lists.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Task]), ConfigService, ListsModule],

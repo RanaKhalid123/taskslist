@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { getConnection, Repository } from 'typeorm';
 import { Task } from './entities/task.entity'
 import { ConfigService } from "@nestjs/config";
-import { ListsService } from 'src/lists/lists.service';
+import { ListsService } from '../lists/lists.service';
 import { UpdateTaskPositionInput } from './dto/update-task-position.input';
 
 require("dotenv").config();

@@ -1,4 +1,4 @@
-import { List } from 'src/lists/entities/list.entity';
+import { List } from '../../lists/entities/list.entity';
 export declare enum TaskStatus {
     COMPLETED = "completed",
     NEW = "new",

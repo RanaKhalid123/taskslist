@@ -18,7 +18,7 @@ export class ListsResolver {
   @Mutation(() => ListPayload)
   async createList(@Args('createListInput') createListInput: CreateListInput) {
     return {
-      list: await this.listsService.create(createListInput),
+      list: await this.listsService.createList(createListInput),
       response: { status: 200, message: 'List created successfully' }
     };
   }

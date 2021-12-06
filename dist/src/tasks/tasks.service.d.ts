@@ -3,7 +3,7 @@ import { UpdateTaskInput } from './dto/update-task.input';
 import { Repository } from 'typeorm';
 import { Task } from './entities/task.entity';
 import { ConfigService } from "@nestjs/config";
-import { ListsService } from 'src/lists/lists.service';
+import { ListsService } from '../lists/lists.service';
 import { UpdateTaskPositionInput } from './dto/update-task-position.input';
 export declare class TasksService {
     private taskRepository;

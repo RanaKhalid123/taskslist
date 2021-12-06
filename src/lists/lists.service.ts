@@ -12,15 +12,14 @@ require("dotenv").config();
 @Injectable()
 export class ListsService {
   constructor(@InjectRepository(List)
-  private listRepository: Repository<List>,
-    private readonly configService: ConfigService) { }
+  private listRepository: Repository<List>) { }
 
   /**
    * Creates lists service
    * @param createListInput 
    * @returns  
    */
-  create(createListInput: CreateListInput) {
+  createList(createListInput: CreateListInput) {
     let user = this.listRepository.create(createListInput);
     return this.listRepository.save(user)
   }

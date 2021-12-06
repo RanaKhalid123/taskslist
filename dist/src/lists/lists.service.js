@@ -17,14 +17,12 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const list_entity_1 = require("./entities/list.entity");
-const config_1 = require("@nestjs/config");
 require("dotenv").config();
 let ListsService = class ListsService {
-    constructor(listRepository, configService) {
+    constructor(listRepository) {
         this.listRepository = listRepository;
-        this.configService = configService;
     }
-    create(createListInput) {
+    createList(createListInput) {
         let user = this.listRepository.create(createListInput);
         return this.listRepository.save(user);
     }
@@ -61,8 +59,7 @@ let ListsService = class ListsService {
 ListsService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(list_entity_1.List)),
-    __metadata("design:paramtypes", [typeorm_2.Repository,
-        config_1.ConfigService])
+    __metadata("design:paramtypes", [typeorm_2.Repository])
 ], ListsService);
 exports.ListsService = ListsService;
 //# sourceMappingURL=lists.service.js.map
